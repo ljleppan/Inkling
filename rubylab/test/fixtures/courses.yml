@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_fi: MyString
+  name_en: MyString
+  name_se: MyString
+  hy_id: MyString
+  active: false
+
+two:
+  name_fi: MyString
+  name_en: MyString
+  name_se: MyString
+  hy_id: MyString
+  active: false

@@ -1,0 +1,90 @@
+$nav-bg: #000;
+$nav-font: #fff;
+
+$footer-bg: #c0c0c0;
+$footer-font: #000;
+
+/* BODY */
+
+body{
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* NAV */
+
+nav {
+  background-color: $nav-bg;
+}
+
+nav a, nav a:visited, nav a:hover{
+  display: inline-block;
+  padding: 10px;
+
+  text-decoration: none;
+  color: $nav-font
+}
+
+nav a:hover{
+  background-color: lighten($nav-bg, 20);
+}
+
+#usermanagement {
+  float: right;
+}
+
+/* HEADER */
+
+body > header {
+  border-bottom: 1px solid red;
+  height: 175px;
+}
+
+body > header h1{
+  float: right;
+}
+
+body > header h1 a{
+  color: #000;
+  text-decoration: none;
+}
+
+body > header h2{
+  float: right;
+  clear: right;
+}
+
+/* BODY */
+
+main > header {
+  position: relative;
+  top: -100px;
+}
+
+main > header h1{
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+/* FOOTER */
+
+footer{
+  position: fixed;
+  width: 100%;
+  max-width: 1000px;
+  bottom: 0;
+
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  padding-bottom: 100px;
+}
+
+footer a, footer a:hover, footer a:visited{
+  text-decoration: none;
+  color: $footer-font;
+}
+
+footer a:hover{
+  text-decoration: underline;
+}
