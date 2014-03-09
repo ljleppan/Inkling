@@ -96,6 +96,17 @@ main > header h1{
   border: 1px solid black;
 }
 
+.exercise header a{
+  float: right;
+  position: relative;
+  top: -40px;
+  left: -50px;
+}
+
+img[src^="http://chart.apis.google.com/"]{
+  vertical-align: middle;
+}
+
 /* TABLES */
 
 table *{
