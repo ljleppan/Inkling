@@ -4,8 +4,8 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @active_courses = Course.active
-    @inactive_courses = Course.inactive
+    @active_courses = Course.active.includes(:exams)
+    @inactive_courses = Course.inactive.includes(:exams)
   end
 
   # GET /courses/1
