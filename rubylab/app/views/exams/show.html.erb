@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<section>
-    <%= @exam.course.name %> <br />
-    <%= @exam.exam_type %> <br />
-    <%= @exam.date %>
-</section>
+<header>
+    <h1><%= @exam.course.name %><br/>
+    <%= @exam.exam_type %> <%= @exam.date %></h1>
+</header>
 
 <section>
   <% if @exam.exercises.empty? %>
