@@ -1,12 +1,17 @@
 <header>
   <nav>
-    <%= link_to 'Exams', exams_path %>
     <%= link_to 'Courses', courses_path %>
+    <%= link_to 'Exams', exams_path %>
     <%= link_to 'Exercises', exercises_path %>
 
     <div id="usermanagement">
-      <%= link_to 'Register' %>
-      <%= link_to 'Login' %>
+      <% if current_user.nil? %>
+        <%= link_to 'Register', register_path %>
+        <%= link_to 'Login', login_path %>
+      <% else %>
+        <%= link_to current_user.username, user_path(current_user) %>
+        <%= link_to 'Logout', logout_path, method: :delete %>
+      <% end %>
     </div>
   </nav>
 

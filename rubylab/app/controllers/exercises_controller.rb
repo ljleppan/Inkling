@@ -10,6 +10,26 @@ class ExercisesController < ApplicationController
   # GET /exercises/1
   # GET /exercises/1.json
   def show
+    @courses = Course.all
+    @exams = Exam.all
+  end
+
+  def update_exams
+    course = Course.find(params[:course_id])
+    @exams = course.exams.map{|e| [e.date, e.id]}.insert(0, 'Select an Exam ')
+  end
+
+  def add_to_exam
+    exam = Exam.find(params[:exam_id])
+    exercise = Exercise.find(params[:exercise_id])
+
+    exams_exercises_entry = ExamsExercise.new exam_id:params[:exam_id], exercise_id:params[:exercise_id]
+
+    if exams_exercises_entry.save
+      redirect_to exercise_path(exercise), notice: 'Exercise was successfully added to the exam'
+    else
+      redirect_to exercise_path(exercise), notice: 'Unable to add the exercise to the exam, this is most likely because exercise is already part of the exam.'
+    end
   end
 
   # GET /exercises/new

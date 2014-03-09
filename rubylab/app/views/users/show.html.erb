@@ -1,14 +1,31 @@
+<header>
+  <h1><%= @user.username %></h1>
+</header>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<section>
+  <header>
+    <h1>Account created</h1>
+  </header>
+  <p><%= @user.created_at.to_date %></p>
+</section>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+<section>
+  <header>
+    <h1>Priviledges</h1>
+  </header>
+  <p>
+    <% if @user.admin %>
+      Admin
+    <% else %>
+      None
+    <% end %>
+  </p>
+</section>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<section class="tools">
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</section>
+

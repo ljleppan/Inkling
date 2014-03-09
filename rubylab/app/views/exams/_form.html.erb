@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :course_id %><br>
-    <%= f.number_field :course_id %>
+    <%= f.label :course %><br>
+    <%= f.select :course_id, options_from_collection_for_select(@courses, :id, :name, selected: @exam.course) %>
   </div>
   <div class="field">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :type_id %><br>
-    <%= f.number_field :type_id %>
+    <%= f.label :exam_type %><br>
+    <%= f.select :exam_type_id, options_from_collection_for_select(@exam_types, :id, :name, selected: @exam.exam_type) %>
   </div>
   <div class="actions">
     <%= f.submit %>

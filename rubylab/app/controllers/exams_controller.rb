@@ -1,5 +1,6 @@
 class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
+  before_action :set_courses_and_types_for_template, only: [:new, :edit, :create]
 
   # GET /exams
   # GET /exams.json
@@ -69,6 +70,11 @@ class ExamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exam_params
-      params.require(:exam).permit(:course_id, :date, :type)
+      params.require(:exam).permit(:course_id, :date, :exam_type_id)
+    end
+
+    def set_courses_and_types_for_template
+      @courses = Course.all
+      @exam_types = ExamType.all
     end
 end

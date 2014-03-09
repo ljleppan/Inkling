@@ -1,0 +1,129 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/loezi/rubylab/rubylab/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/helpers/courses_helper.rb": [
+        1,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/helpers/exams_helper.rb": [
+        1,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/helpers/exercises_helper.rb": [
+        1,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/helpers/index_helper.rb": [
+        1,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/helpers/static_helper.rb": [
+        1,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/models/course.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/models/exam.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/models/exam_type.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/models/exercise.rb": [
+        1,
+        1,
+        48,
+        6,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/loezi/rubylab/rubylab/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1394385526
+  }
+}

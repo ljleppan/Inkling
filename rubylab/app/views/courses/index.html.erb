@@ -2,35 +2,18 @@
   <h1>Courses</h1>
 </header>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Hy</th>
-      <th>Exams</th>
-      <th>Active</th>
-    </tr>
-  </thead>
+<section>
+  <header>
+    <h1>Current courses</h1>
+  </header>
+  <%= render 'courses/list', courses:@active_courses %>
+</section>
 
-  <tbody>
-    <% @courses.each do |course| %>
-      <tr>
-        <td><%= link_to course.name, course_path(course) %></td>
-        <td><%= course.hy_id %></td>
-        <td><%= course.exams.size %></td>
-        <td><%= course.active %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
-  <tfoot>
-    <tr>
-      <th>Name</th>
-      <th>Hy</th>
-      <th>Exams</th>
-      <th>Active</th>
-    </tr>
-  </tfoot>
-</table>
+<section>
+  <header>
+    <h1>Previous courses</h1>
+  </header>
+  <%= render 'courses/list', courses:@inactive_courses %>
+</section>
 
 <%= link_to 'New Course', new_course_path %>

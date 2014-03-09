@@ -1,0 +1,31 @@
+<% if courses.empty? %>
+ <p>No matching courses found.</p>
+<% else %>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Hy</th>
+    <th>Exams</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% courses.each do |course| %>
+      <tr>
+        <td><%= link_to course.name, course_path(course) %></td>
+        <td><a href="http://cs.helsinki.fi/courses/<%= course.hy_id %>"><%= course.hy_id %></a></td>
+        <td><%= course.exams.size %></td>
+      </tr>
+  <% end %>
+  </tbody>
+
+  <tfoot>
+  <tr>
+    <th>Name</th>
+    <th>Hy</th>
+    <th>Exams</th>
+  </tr>
+  </tfoot>
+</table>
+<% end %>

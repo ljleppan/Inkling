@@ -1,19 +1,41 @@
+<header>
+  <h1><%= @course.name %></h1>
+</header>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
+<section>
+  University course ID: <a href="http://www.cs.helsinki.fi/courses/<%= @course.hy_id %>"><%= @course.hy_id %></a>
+</section>
 
-<p>
-  <strong>Hy:</strong>
-  <%= @course.hy_id %>
-</p>
+<section>
+  <p>This course is <% unless @course.active %>NOT<% end %> currently active.</p>
+</section>
 
-<p>
-  <strong>Active:</strong>
-  <%= @course.active %>
-</p>
+<section>
+  <header>
+    <h1>Exams</h1>
+  </header>
+  <% if @course.exams.empty? %>
+     <p>No known exams.</p>
+  <% else %>
+  <ul>
+    <% @course.exams.each do |exam|%>
+      <li> <%= link_to exam, exam_path(exam) %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</section>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<section>
+  <header>
+    <h1>Exercises</h1>
+  </header>
+  <%= render 'exercises/list', exercises:@course.exercises %>
+</section>
+
+<section class="tools">
+  <%= link_to 'Edit', edit_course_path(@course) %> |
+  <%= link_to 'Back', courses_path %>
+</section>
+

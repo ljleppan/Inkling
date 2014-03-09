@@ -1,19 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Course:</strong>
-  <%= @exam.course_id %>
-</p>
+<section>
+    <%= @exam.course.name %> <br />
+    <%= @exam.exam_type %> <br />
+    <%= @exam.date %>
+</section>
 
-<p>
-  <strong>Date:</strong>
-  <%= @exam.date %>
-</p>
+<section>
+  <% if @exam.exercises.empty? %>
+    <p>No known exercises.</p>
+  <% else %>
+    <% @exam.exercises.each do |exercise| %>
+      <section class="exercise">
+        <section>
+          <header>
+            <h1>Question</h1>
+          </header>
+          <%= raw exercise.to_html(exercise.question) %>
+        </section>
 
-<p>
-  <strong>Type:</strong>
-  <%= @exam.type_id %>
-</p>
+        <section>
+          <header>
+            <h1>Suggested answer</h1>
+          </header>
+          <%= raw exercise.to_html(exercise.answer) %>
+        </section>
+
+        <section>
+          <header>
+            <h1>Scoring criteria</h1>
+          </header>
+          <%= raw exercise.to_html(exercise.criteria) %>
+        </section>
+      </section>
+    <% end %>
+  <% end %>
+</section>
+
 
 <%= link_to 'Edit', edit_exam_path(@exam) %> |
 <%= link_to 'Back', exams_path %>

@@ -37,8 +37,7 @@ nav a:hover{
 /* HEADER */
 
 body > header {
-  border-bottom: 1px solid red;
-  height: 175px;
+  color: #000;
 }
 
 body > header h1{
@@ -57,9 +56,16 @@ body > header h2{
 
 /* BODY */
 
+main {
+  overflow: auto;
+}
+
 main > header {
+  display: inline-block;
   position: relative;
-  top: -100px;
+  top: -40px;
+  border-bottom: 1px solid black;
+  padding-right: 100px;
 }
 
 main > header h1{
@@ -67,17 +73,53 @@ main > header h1{
   margin-top: 50px;
 }
 
+.exercise {
+  margin: 10px;
+  padding: 10px;
+  padding-top: 0px;
+  border: 1px solid black;
+}
+
+/* TABLES */
+
+table *{
+  margin: 0px;
+}
+
+table {
+  border-spacing: 0;
+  margin: 15px;
+  text-align: left;
+  min-width: 600px;
+}
+
+table td, table th {
+  padding: 5px;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+table tfoot th{
+  border-top: 1px solid black;
+}
+
+table thead th{
+  border-bottom: 1px solid black;
+}
+
 /* FOOTER */
 
 footer{
-  position: fixed;
-  width: 100%;
-  max-width: 1000px;
-  bottom: 0;
-
+  margin-top: 50px;
   border-top: 1px solid #000;
   padding-top: 10px;
-  padding-bottom: 100px;
+  padding-bottom: 10px;
 }
 
 footer a, footer a:hover, footer a:visited{

@@ -1,24 +1,75 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Points:</strong>
-  <%= @exercise.points %>
-</p>
+<section>
+  <header>
+    <h1>Exercise info</h1>
+  </header>
 
-<p>
-  <strong>Question:</strong>
-  <%= @exercise.question %>
-</p>
+  <p>
+    <strong>Points:</strong>
+    <%= @exercise.points %>
+  </p>
 
-<p>
-  <strong>Answer:</strong>
-  <%= @exercise.answer %>
-</p>
+  <p>
+    <strong>Question:</strong>
+    <%= raw(@exercise.to_html(@exercise.question)) %>
+  </p>
 
-<p>
-  <strong>Criteria:</strong>
-  <%= @exercise.criteria %>
-</p>
+  <p>
+    <strong>Answer:</strong>
+    <%= raw(@exercise.to_html(@exercise.answer)) %>
+  </p>
+
+  <p>
+    <strong>Criteria:</strong>
+    <%= raw(@exercise.to_html(@exercise.criteria)) %>
+  </p>
+</section>
+
+<section>
+  <header>
+    <h1>Found in following exams:</h1>
+  </header>
+  <% if @exercise.exams.empty? %>
+      <p>No known occurances.</p>
+  <% else %>
+    <ul>
+      <% @exercise.exams.each do |exam| %>
+        <li><%= link_to exam, exam_path(exam) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
+
+<section>
+  <script>
+      $(document).ready(function() {
+          $('#courses_select').change(function() {
+              $.ajax({
+                  url: "<%= update_exams_path %>",
+                  data: {
+                      course_id : $('#courses_select').val()
+                  },
+                  dataType: "script"
+              });
+          });
+      });
+  </script>
+
+  <header>
+    <h1>Add to exam</h1>
+  </header>
+
+
+    <%= form_tag(add_exercise_to_exam_path, method: 'post') do %>
+      <%= hidden_field_tag :exercise_id, @exercise.id %>
+      <%= collection_select(nil, :course_id,  @courses,  :id, :name, {:prompt   => 'Select a Course'}, {:id => 'courses_select'}) %>
+      <%= collection_select(nil, :exam_id, @exams, :id, :date, {:prompt   => 'Select an Exam'}, {:id => 'exams_select'}) %>
+      <%= submit_tag %>
+    <% end %>
+</section>
+
+
 
 <%= link_to 'Edit', edit_exercise_path(@exercise) %> |
 <%= link_to 'Back', exercises_path %>
