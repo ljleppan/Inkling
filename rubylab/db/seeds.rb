@@ -190,11 +190,11 @@ tässä olettaa tunnetuksi, mitä luentomateriaalissa kerrotaan leveyssuuntaisen
 läpikäynnin aikavaativuudesta yleisessä tapauksessa.
 
 b) Jos verkossa [latex]G = (V, E)[/latex] on ainakin [latex]|V|[/latex] kaarta ja [latex]e[/latex] on sellainen kaari, että
-[latex]w(e) > w(e^')[/latex] kaikilla [latex]e \neq e^'[/latex], niin kaari [latex]e[/latex] ei kuulu mihinkään verkon pienimpään
+[latex]w(e) > w(e^')[/latex] kaikilla [latex]e \\neq e^'[/latex], niin kaari [latex]e[/latex] ei kuulu mihinkään verkon pienimpään
 virittävään puuhun. Tässä [latex]w(e)[/latex] tarkoittaa kaaren [latex]e[/latex] painoa.
 
 c) Jos [latex](v_0, ..., v_k)[/latex] on ainoa lyhin polku solmusta [latex]v_0[/latex] solmuun [latex]v_k[/latex] , niin kaikki kaaret
-[latex](v_i, v_{i+1}), i = 0, ..., k − 1[/latex], kuuluvat jokaiseen verkon pienimpään virittävään puuhun."
+[latex](v_i, v_{i+1}), i = 0, ..., k-1[/latex], kuuluvat jokaiseen verkon pienimpään virittävään puuhun."
 
 #QUESTIONS, OTM
 otm_q1 = "
