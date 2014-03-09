@@ -152,6 +152,39 @@ table thead th{
   border-bottom: 1px solid black;
 }
 
+/* TOOLBELT */
+
+.toolbelt {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.toolbelt a{
+  padding: 10px;
+  margin: -1px;
+}
+
+.toolbelt a, .toolbelt a:visited{
+  color: $nav-font;
+  text-decoration: none;
+  background-color: $nav-bg;
+}
+
+.toolbelt a:hover{
+  background-color: lighten($nav-bg, 20);
+}
+
+.toolbelt a:first-child{
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.toolbelt a:last-child{
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 /* FOOTER */
 
 footer{
