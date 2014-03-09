@@ -1,3 +1,7 @@
+/* FONTS */
+@import url(http://fonts.googleapis.com/css?family=Sue+Ellen+Francisco);
+@import url(http://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
+
 $nav-bg: #000;
 $nav-font: #fff;
 
@@ -41,7 +45,13 @@ body > header {
 }
 
 body > header h1{
+  font-family: 'Sue Ellen Francisco', cursive;
+  font-weight: normal;
+
+  font-size: 4em;
+
   float: right;
+  margin-right: 70px;
 }
 
 body > header h1 a{
@@ -50,20 +60,26 @@ body > header h1 a{
 }
 
 body > header h2{
+  font-family: 'Covered By Your Grace', cursive;
+  letter-spacing: 0.1em;
+  font-weight: normal;
   float: right;
   clear: right;
+  position: relative;
+  top: -210px;
+  left: -40px;
 }
 
 /* BODY */
 
 main {
-  overflow: auto;
+  position: relative;
+  top: -250px;
+  clear: both;
 }
 
 main > header {
   display: inline-block;
-  position: relative;
-  top: -40px;
   border-bottom: 1px solid black;
   padding-right: 100px;
 }
