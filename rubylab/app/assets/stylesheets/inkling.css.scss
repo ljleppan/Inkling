@@ -147,11 +147,16 @@ footer{
   border-top: 1px solid #000;
   padding-top: 10px;
   padding-bottom: 10px;
+  text-align: center;
 }
 
 footer a, footer a:hover, footer a:visited{
   text-decoration: none;
   color: $footer-font;
+}
+
+footer a:first-child{
+  margin-right: 50px;
 }
 
 footer a:hover{
