@@ -14,6 +14,7 @@
         <section>
           <header>
             <h1>Question</h1>
+            <%= link_to "##{exercise.id}", exercise_path(exercise) %>
           </header>
           <%= raw exercise.to_html(exercise.question) %>
         </section>
