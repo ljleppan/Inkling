@@ -15,8 +15,19 @@
         <td><%= exercise.exams.size %></td>
         <td><%= exercise.points %></td>
         <td><%= link_to truncate(exercise.question, length:25), exercise_path(exercise) %></td>
-        <td><%= link_to truncate(exercise.answer, length:25), exercise_path(exercise) %></td>
-        <td><%= link_to truncate(exercise.criteria, length:25), exercise_path(exercise) %></td>
+        <td>
+          <% if exercise.answer.nil? %>
+              -
+          <% else %>
+            <%= link_to truncate(exercise.answer, length:25), exercise_path(exercise) %>
+          <% end %>
+        </td>
+        <td>
+          <% if exercise.criteria.nil? %>
+              -
+          <% else %>
+            <%= link_to truncate(exercise.criteria, length:25), exercise_path(exercise) %></td>
+          <% end %>
       </tr>
   <% end %>
   </tbody>
