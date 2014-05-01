@@ -18,6 +18,13 @@ Feature: I can create everything as a logged in user
     And I should see 'Testi'
     And I should see 'No known exams.'
 
+  Scenario: Creating a course fails with invalid inputs
+    Given I am a logged in user
+    And I am viewing courses/new
+    And I click 'Create Course'
+    Then I should see 'Name is too short (minimum is 3 characters)'
+    And I should see 'Hy is not a number'
+
   Scenario: I can create exams
     Given I am a logged in user
     And I am viewing exams
@@ -48,6 +55,13 @@ Feature: I can create everything as a logged in user
     And I should see 'vastaus_teksti'
     And I should see 'arvostelu_teksti'
     And I should see 'No known occurances.'
+
+  Scenario: Creating an exercise fails with invalid inputs
+    Given I am a logged in user
+    And I am viewing exercises/new
+    And I click 'Create Exercise'
+    Then I should see 'Points is not a number'
+    And I should see 'Question can't be blank'
 
   Scenario: I can add exercises to exams
     Given I am a logged in user
