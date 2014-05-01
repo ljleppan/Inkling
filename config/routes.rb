@@ -1,7 +1,4 @@
 Rubylab::Application.routes.draw do
-
-
-
   root  'static#index'
 
   get 'about', to:'static#about'

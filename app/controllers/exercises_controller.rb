@@ -72,16 +72,6 @@ class ExercisesController < ApplicationController
     end
   end
 
-  # DELETE /exercises/1
-  # DELETE /exercises/1.json
-  def destroy
-    @exercise.destroy
-    respond_to do |format|
-      format.html { redirect_to exercises_url }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_exercise
