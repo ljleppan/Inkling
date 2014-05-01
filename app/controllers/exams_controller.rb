@@ -1,6 +1,7 @@
 class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
   before_action :set_courses_and_types_for_template, only: [:new, :edit, :create]
+  before_action :ensure_login
 
   # GET /exams
   # GET /exams.json
