@@ -1,0 +1,20 @@
+language: ruby
+rvm:
+- 2.0.0
+script:
+- bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate --traceg
+- bundle exec rake db:test:prepare
+- bundle exec rspec -fd spec/
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: F+9rNZ2FYTr81t4+ifOoGCYXIm5F7FYeNaZv+iRqzsoeLk0tmRxFDYQzSxH17W7wVVphJ72vLBeRcD5qK7RB/WXtJq5vDEZ0/+GDoyTgmzFx7r+JLvXxTOAyrbhhZzp97HcISdYlv8o2zMO/jhdBoTmjgKfvxHKUsVYZ0kKe9fA=
+  app: inkling
+  on:
+    repo: ljleppan/Inkling
+  run: "rake db:migrate assets:precompile"
