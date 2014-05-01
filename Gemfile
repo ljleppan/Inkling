@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rb-readline'
 gem 'bb-ruby', '~> 1.0.4'
 
+gem 'coveralls', require: false
+
 group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
