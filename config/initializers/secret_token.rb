@@ -9,4 +9,5 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Rubylab::Application.config.secret_key_base = ENV['SECRET_TOKEN']
+secret = Rails.env.production? ? ENV['SECRET_TOKEN'] : "top_secret_token"
+Rubylab::Application.config.secret_key_base = secret
