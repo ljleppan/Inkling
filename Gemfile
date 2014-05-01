@@ -12,8 +12,13 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec-rails', '~> 2.14.1'
+  gem 'capybara'
+  gem 'cucumber-rails', require: false
   gem 'factory_girl_rails'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner', '< 1.1.0'
+  gem 'webmock'
+  gem 'rspec-rails', '~> 2.14.1'
   gem 'simplecov', require: false
 end
 
