@@ -19,6 +19,6 @@ Rubylab::Application.routes.draw do
 
   resources :courses
 
-  resources :users
+  resources :users, :only => [:new, :show, :create]
 
 end
