@@ -6,6 +6,7 @@ script:
 - RAILS_ENV=test bundle exec rake db:migrate --traceg
 - bundle exec rake db:test:prepare
 - bundle exec rspec -fd spec/
+- bundle exec rake coveralls:push
 deploy:
   provider: heroku
   api_key:
