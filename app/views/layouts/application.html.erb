@@ -8,9 +8,17 @@
 </head>
   <body>
     <%= render 'layouts/header' %>
+
     <main>
+      <header>
+        <h1><%= yield :header %></header>
+      </header>
+
+      <%= render 'layouts/alerts' %>
+
       <%= yield %>
     </main>
+
     <%= render 'layouts/footer' %>
   </body>
 </html>

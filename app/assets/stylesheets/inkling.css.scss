@@ -117,6 +117,46 @@ img[src^="http://chart.apis.google.com/"]{
   height: 150px;
 }
 
+/* ALERTS */
+
+#alert {
+  border-left: 4px solid red;
+  color: red;
+  font-weight: bold;
+  padding: 10px 0 10px 10px;
+}
+
+#notice {
+  border-left: 4px solid green;
+  color: green;
+  font-weight: bold;
+  padding: 10px 0 10px 10px;
+}
+
+/* FORMS */
+input, textarea {
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 4px;
+}
+
+label{
+  margin-top: 10px;
+  width: 100px;
+  display: inline-block;
+  text-align: right;
+}
+
+input[type=submit]{
+  padding: 7px 10px 7px 10px;
+  color: $nav-font;
+  text-decoration: none;
+  background-color: $nav-bg;
+  position: relative;
+  left: 105px;
+  top: 10px;
+}
 
 /* TABLES */
 

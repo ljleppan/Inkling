@@ -1,8 +1,6 @@
-<header>
-  <h1><%= @course.name %></h1>
-</header>
-
-<p id="notice"><%= notice %></p>
+<% content_for :header do %>
+  <%= @course.name %>
+<% end %>
 
 <section>
   University course ID: <a href="http://www.cs.helsinki.fi/courses/<%= @course.hy_id %>"><%= @course.hy_id %></a>

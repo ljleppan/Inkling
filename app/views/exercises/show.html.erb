@@ -1,8 +1,6 @@
-<header>
-  <h1>Exercise #<%= @exercise.id %></h1>
-</header>
-
-<p id="notice"><%= notice %></p>
+<% content_for :header do %>
+  Exercise #<%= @exercise.id %>
+<% end %>
 
 <section>
   <header>
@@ -67,8 +65,10 @@
 
     <%= form_tag(add_exercise_to_exam_path, method: 'post') do %>
       <%= hidden_field_tag :exercise_id, @exercise.id %>
-      <%= collection_select(nil, :course_id,  @courses,  :id, :name, {:prompt   => 'Select a Course'}, {:id => 'courses_select'}) %>
-      <%= collection_select(nil, :exam_id, @exams, :id, :date, {:prompt   => 'Select an Exam'}, {:id => 'exams_select'}) %>
+      <%= label_tag 'course' %>
+      <%= collection_select(nil, :course_id,  @courses,  :id, :name, {:prompt   => 'Select a Course'}, {:id => 'courses_select'}) %><br />
+      <%= label_tag 'exam' %>
+      <%= collection_select(nil, :exam_id, @exams, :id, :date, {:prompt   => 'Select an Exam'}, {:id => 'exams_select'}) %> <br/>
       <%= submit_tag %>
     <% end %>
 </section>

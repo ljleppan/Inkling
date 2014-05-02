@@ -1,10 +1,8 @@
-<header>
-  <h1>Editing course</h1>
-</header>
+<% content_for :header do %>
+  Editing course
+<% end %>
 
 <%= render 'form' %>
-
-
 
 <section class="toolbelt">
   <%= link_to 'Show', @course %><%= link_to 'Back', courses_path %>

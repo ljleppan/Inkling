@@ -28,11 +28,11 @@ class ExercisesController < ApplicationController
     if exams_exercises_entry.save
       redirect_to exercise_path(exercise), notice: 'Exercise was successfully added to the exam'
     else
-      redirect_to exercise_path(exercise), notice: 'Unable to add the exercise to the exam, this is most likely because exercise is already part of the exam.'
+      redirect_to exercise_path(exercise), alert: 'Unable to add the exercise to the exam, this is most likely because exercise is already part of the exam.'
     end
 
     rescue ActiveRecord::RecordNotFound
-      redirect_to exercise_path(exercise), notice: 'No such exam.'
+      redirect_to exercise_path(exercise), alert: 'No such exam.'
   end
 
   # GET /exercises/new

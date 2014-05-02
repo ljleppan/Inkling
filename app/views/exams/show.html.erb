@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<header>
-    <h1><%= @exam.course.name %><br/>
-    <%= @exam.exam_type %> <%= @exam.date %></h1>
-</header>
+<% content_for :header do %>
+  <%= @exam.course.name %><br/>
+  <%= @exam.exam_type %> <%= @exam.date %>
+<% end %>
 
 <section>
   <% if @exam.exercises.empty? %>
