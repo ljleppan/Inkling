@@ -111,6 +111,13 @@ img[src^="http://chart.apis.google.com/"]{
   vertical-align: middle;
 }
 
+/* EXERCISE-TEXTAREA */
+#exercise_question, #exercise_answer, #exercise_criteria {
+  width: 70%;
+  height: 150px;
+}
+
+
 /* TABLES */
 
 table *{
