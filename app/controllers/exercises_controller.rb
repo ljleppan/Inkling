@@ -21,9 +21,8 @@ class ExercisesController < ApplicationController
   end
 
   def add_to_exam
-    exam = Exam.find(params[:exam_id])
     exercise = Exercise.find(params[:exercise_id])
-
+    exam = Exam.find(params[:exam_id])
     exams_exercises_entry = ExamsExercise.new exam_id:params[:exam_id], exercise_id:params[:exercise_id]
 
     if exams_exercises_entry.save
@@ -31,6 +30,9 @@ class ExercisesController < ApplicationController
     else
       redirect_to exercise_path(exercise), notice: 'Unable to add the exercise to the exam, this is most likely because exercise is already part of the exam.'
     end
+
+    rescue ActiveRecord::RecordNotFound
+      redirect_to exercise_path(exercise), notice: 'No such exam.'
   end
 
   # GET /exercises/new
