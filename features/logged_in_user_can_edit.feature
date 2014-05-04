@@ -50,4 +50,14 @@ Feature: I can edit everything as a logged in user
     And I click 'Update Exercise'
     Then I should see 'Points is not a number'
     And I should see 'Question can't be blank'
+    
+  @javascript
+  Scenario: I can add an exercise to an exam
+    Given I am a logged in user
+    And I am viewing exercises/1
+    And I select 'Ohjelmistotekniikan menetelmät' as 'courses_select'
+    And I select '2013-12-11' as 'exams_select'
+    And I click 'Save changes'
+    Then I should see 'Exercise was successfully added to the exam'
+    And I should see 'Ohjelmistotekniikan menetelmät - Kurssikoe - 2013-12-11'
 
