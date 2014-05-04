@@ -8,3 +8,5 @@ Inkling
 
 
 [![Heroku](https://d1lpkba4w1baqt.cloudfront.net/heroku-logo-light-300x100.png)](http://inkling.herokuapp.com)
+
+[Dokumentaatio](https://github.com/ljleppan/Inkling/wiki/Dokumentaatio)
