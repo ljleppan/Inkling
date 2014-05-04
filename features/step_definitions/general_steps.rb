@@ -24,8 +24,8 @@ end
 
 Then(/^I should be prompted for login$/) do
   page.should have_content 'Login'
-  page.should have_content 'username'
-  page.should have_content 'password'
+  page.should have_content 'Username'
+  page.should have_content 'Password'
 end
 
 And(/^I input '(.*)' to '(.*)'$/) do |input, field|
